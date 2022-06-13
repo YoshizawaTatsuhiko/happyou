@@ -11,9 +11,10 @@ public class ExampleShipControl : MonoBehaviour {
 	void Start () {
 	
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    [System.Obsolete]
+    void Update () {
 	
 	
 		if (Input.GetKeyDown(KeyCode.Escape))
