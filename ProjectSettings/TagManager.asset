@@ -14,15 +14,18 @@ TagManager:
   - Coin
   - PlayerRay
   - Rocket
+  - DamageSource
+  - weapon1
+  - BOSS
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - wall
   - Water
   - UI
-  - 
-  - 
+  - bullet1
+  - Asteroid
   - 
   - 
   - 

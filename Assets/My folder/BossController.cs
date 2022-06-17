@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
-    [SerializeField] string _weapon = "";
+    GameObject _HPmanager;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        _HPmanager = GameObject.Find("Boss1");
     }
 
     // Update is called once per frame
@@ -21,6 +21,10 @@ public class BossController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        if(collision.gameObject.tag == "weapon1")
+        {
+            _HPmanager.GetComponent<HPmanager>().UpdateHP(1f);
+            Debug.Log("B_hit");
+        }
     }
 }

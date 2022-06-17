@@ -8,7 +8,7 @@ public class Playercontroller : MonoBehaviour
     [SerializeField] float n;
     [SerializeField] float _macineSpeed;
     Rigidbody2D _rb;
-    GameObject _MainShooter;
+    //GameObject _MainShooter;
     GameObject _HPmanager;
     void Start()
     {
@@ -54,7 +54,7 @@ public class Playercontroller : MonoBehaviour
         if (collision.gameObject.tag == "DamageSource")
         {
             _HPmanager.GetComponent<HPmanager>().UpdateHP(1f);
-            Debug.Log("hit");
+            Debug.Log("P_hit");
         }
     }
 }
