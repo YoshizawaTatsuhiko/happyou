@@ -9,11 +9,13 @@ public class Playercontroller : MonoBehaviour
     [SerializeField] float _macineSpeed;
     Rigidbody2D _rb;
     GameObject _MainShooter;
+    GameObject _HPmanager;
     void Start()
     {
         Cursor.visible = false;
         n = C_interval;
         _rb = GetComponent<Rigidbody2D>();
+        _HPmanager = GameObject.Find("player");
     }
     // Update is called once per frame
 
@@ -45,13 +47,15 @@ public class Playercontroller : MonoBehaviour
         {
             _rb.velocity = Vector3.zero;
         }
+    }
 
-        //クリックを離したら、機体が止まる(止まらない)
-        //if(Input.GetMouseButtonUp(0))
-        //{
-        //    _rb.velocity = Vector3.zero;
-        //    Debug.Log("a");
-        //}
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "DamageSource")
+        {
+            _HPmanager.GetComponent<HPmanager>().UpdateHP(1f);
+            Debug.Log("hit");
+        }
     }
 }
     
