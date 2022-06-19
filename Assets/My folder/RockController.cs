@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class RockController : MonoBehaviour
 {
+
+    [SerializeField] float _destroyTime = 5f;
+    [SerializeField] float _time;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,7 +16,12 @@ public class RockController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        _time += Time.deltaTime;
+
+        if(_time > _destroyTime)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

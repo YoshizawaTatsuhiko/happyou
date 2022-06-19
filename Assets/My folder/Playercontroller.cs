@@ -38,7 +38,7 @@ public class Playercontroller : MonoBehaviour
                 n = 0;
 
                 //main weapon
-                var bul1 = Instantiate(_bulletC, muzzle_C.position, this.transform.rotation);
+                var bul1 = Instantiate(_bulletC, muzzle_C.position,transform.rotation);
                 bul1.Direction = Vector3.up;
                 bul1.transform.position = muzzle_C.position;
             }

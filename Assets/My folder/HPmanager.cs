@@ -8,6 +8,7 @@ public class HPmanager : MonoBehaviour
 
     [SerializeField] private Image _hpBar;
     [SerializeField] private float _maxHP;
+    [SerializeField] Image _scene;
 
     // Start is called before the first frame update
 
@@ -20,7 +21,11 @@ public class HPmanager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(_currentHP <= 0)
+        {
+            _scene.gameObject.SetActive(true);
+            Destroy(gameObject);
+        }
     }
 
     public void UpdateHP(float damage)

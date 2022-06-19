@@ -21,11 +21,11 @@ public class SpecialManager : MonoBehaviour
         if (Input.GetButton("Fire2"))
         {
             //special weapon
-            var bul2 = Instantiate(_bulletS, muzzle_S1.position, this.transform.rotation);
+            var bul2 = Instantiate(_bulletS, muzzle_S1.position, transform.rotation);
             bul2.Direction = Vector3.up;
             bul2.transform.position = muzzle_S1.position;
             
-            var bul3 = Instantiate(_bulletS, muzzle_S2.position, this.transform.rotation);
+            var bul3 = Instantiate(_bulletS, muzzle_S2.position, transform.rotation);
             bul3.Direction = Vector3.up;
             bul3.transform.position = muzzle_S2.position;
         }
