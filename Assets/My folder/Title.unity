@@ -152,7 +152,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e603b4c31795b3d44a9f57b3accda0f7, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -280,7 +280,7 @@ RectTransform:
   m_GameObject: {fileID: 797795926}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5785281, y: 0.5785281, z: 0.5785281}
+  m_LocalScale: {x: 1.6828804, y: 1.6828804, z: 1.6828804}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2119083539}
@@ -289,8 +289,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2, y: -121.73477}
-  m_SizeDelta: {x: 387.7925, y: 46.3683}
+  m_AnchoredPosition: {x: 0, y: -274}
+  m_SizeDelta: {x: 180.1477, y: 46.3683}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &797795928
 MonoBehaviour:
@@ -428,7 +428,7 @@ RectTransform:
   m_GameObject: {fileID: 1470057719}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.27523, y: 0.27523, z: 0.27523}
+  m_LocalScale: {x: 0.9222957, y: 0.9222957, z: 0.9222957}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1654667840}
@@ -437,7 +437,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.3, y: -64.609634}
+  m_AnchoredPosition: {x: -1.3, y: -118.609634}
   m_SizeDelta: {x: 712.3171, y: 92.5632}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1470057721
@@ -654,7 +654,7 @@ RectTransform:
   m_GameObject: {fileID: 1698858847}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.4123, y: 1, z: 1}
+  m_LocalScale: {x: 12.133385, y: 2.7499, z: 2.7499}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2072609846}
@@ -662,7 +662,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2, y: 86}
+  m_AnchoredPosition: {x: 2, y: 232}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1698858849
@@ -1113,7 +1113,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: EXPLANATION
+  m_Text: HELP
 --- !u!222 &2119083542
 CanvasRenderer:
   m_ObjectHideFlags: 0

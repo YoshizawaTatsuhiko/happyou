@@ -152,7 +152,7 @@ RectTransform:
   m_GameObject: {fileID: 276899385}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.8950832, y: 2.8950832, z: 2.8950832}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1580541148}
@@ -161,7 +161,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -187, y: -147}
+  m_AnchoredPosition: {x: -642, y: -385}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &276899387
@@ -383,7 +383,7 @@ RectTransform:
   m_GameObject: {fileID: 706531108}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2597409, y: 0.2597409, z: 0.2597409}
+  m_LocalScale: {x: 0.79452103, y: 0.79452103, z: 0.79452103}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1337381721}
@@ -391,7 +391,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -160, y: 121}
+  m_AnchoredPosition: {x: -457, y: 291}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &706531110
@@ -730,7 +730,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e603b4c31795b3d44a9f57b3accda0f7, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -841,7 +841,7 @@ RectTransform:
   m_GameObject: {fileID: 2014187549}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.6086, y: 2.6086, z: 2.6086}
+  m_LocalScale: {x: 5.7676144, y: 5.7676144, z: 5.7676144}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1337381721}
@@ -849,7 +849,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 86, y: -46}
+  m_AnchoredPosition: {x: 260, y: -125}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2014187551
