@@ -22,15 +22,13 @@ public class Playercontroller : MonoBehaviour
     [SerializeField] ShootManager _bulletC = default;
     [SerializeField] Transform muzzle_C = default;
     void FixedUpdate()
-    {       
-        if (Input.GetButton("Fire1"))
-        {   
-            //空間でのマウス位置の計算
+    {    //空間でのマウス位置の計算
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); 
             Vector3 vec = mousePosition - transform.position;
             _rb.velocity = Vector2.zero;
-            _rb.AddForce(vec.normalized * _macineSpeed, ForceMode2D.Impulse);
-
+            _rb.AddForce(vec.normalized * _macineSpeed, ForceMode2D.Impulse);   
+        if (Input.GetButton("Fire1"))
+        {   
             n += Time.deltaTime;
             //弾の発射間隔
             if (n >= C_interval)

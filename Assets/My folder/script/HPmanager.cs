@@ -10,9 +10,6 @@ public class HPmanager : MonoBehaviour
     [SerializeField] private float _maxHP;
     [SerializeField] Image _scene;
 
-    public Collider2D col1;
-    public Collider2D col2;
-
     // Start is called before the first frame update
 
     private float _currentHP;
@@ -25,10 +22,9 @@ public class HPmanager : MonoBehaviour
     void Update()
     {
         if(_currentHP <= 0)
-        {
+        {   
             _scene.gameObject.SetActive(true);
-            col1.enabled = false;
-            col2.enabled = false;
+            Cursor.visible = true;
             Destroy(gameObject);
         }
     }

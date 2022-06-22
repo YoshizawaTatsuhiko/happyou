@@ -424,8 +424,6 @@ MonoBehaviour:
   _hpBar: {fileID: 1232588041}
   _maxHP: 200
   _scene: {fileID: 1562757534}
-  col1: {fileID: 464898175}
-  col2: {fileID: 464898174}
 --- !u!114 &464898170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -823,7 +821,7 @@ MonoBehaviour:
   - {fileID: 5015240642287885130, guid: 77d57f271224ce74a91b582ac0ac0c34, type: 3}
   - {fileID: 7383357842886806972, guid: acbe8b9b32812c14d800d0d920b1358c, type: 3}
   - {fileID: 7383357842886806972, guid: acbe8b9b32812c14d800d0d920b1358c, type: 3}
-  _interval: 0.7
+  _interval: 0.8
 --- !u!61 &820562437
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1549,8 +1547,6 @@ MonoBehaviour:
   _hpBar: {fileID: 1227057708}
   _maxHP: 15
   _scene: {fileID: 1950418316}
-  col1: {fileID: 1492923863}
-  col2: {fileID: 1492923862}
 --- !u!1 &1562757533
 GameObject:
   m_ObjectHideFlags: 0
