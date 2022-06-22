@@ -18,6 +18,7 @@ TagManager:
   - weapon1
   - BOSS
   - damage1
+  - weapon2
   layers:
   - Default
   - TransparentFX

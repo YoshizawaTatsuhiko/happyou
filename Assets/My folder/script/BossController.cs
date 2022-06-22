@@ -26,5 +26,11 @@ public class BossController : MonoBehaviour
             _HPmanager.GetComponent<HPmanager>().UpdateHP(1f);
             Debug.Log("B_hit");
         }
+
+        else if (collision.gameObject.tag == "weapon2")
+        {
+            _HPmanager.GetComponent<HPmanager>().UpdateHP(10f);
+            Debug.Log("B_hit");
+        }
     }
 }
