@@ -10,15 +10,12 @@ public class Playercontroller : MonoBehaviour
     [SerializeField] float S_n;
     [SerializeField] float _macineSpeed;
     Rigidbody2D _rb;
-    //GameObject _MainShooter;
-    GameObject _HPmanager;
     void Start()
     {
         Cursor.visible = false;
         C_n = C_interval;
         S_n = S_interval;
         _rb = GetComponent<Rigidbody2D>();
-        _HPmanager = GameObject.Find("player");
     }
     // Update is called once per frame
 
@@ -88,7 +85,7 @@ public class Playercontroller : MonoBehaviour
     {
         if (collision.gameObject.tag == "damage1")
         {
-            _HPmanager.GetComponent<HPmanager>().UpdateHP(1f);
+            GetComponent<HPmanager>().UpdateHP(1f);
             Debug.Log("P_hit");
         }
     }
