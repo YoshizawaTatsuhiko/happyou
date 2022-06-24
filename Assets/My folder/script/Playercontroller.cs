@@ -39,7 +39,6 @@ public class Playercontroller : MonoBehaviour
         else if (Input.GetButton("Fire2"))
         {
             SpecialBullet();
-
         }
     }
       

@@ -8,7 +8,8 @@ public class HPmanager : MonoBehaviour
 
     [SerializeField] private Image _hpBar;
     [SerializeField] private float _maxHP;
-    [SerializeField] Image _scene;
+    [SerializeField] Image _image1;
+    [SerializeField] Image _image2;
 
     // Start is called before the first frame update
 
@@ -16,22 +17,36 @@ public class HPmanager : MonoBehaviour
     void Start()
     {
         _currentHP = _maxHP;
+        Cursor.visible = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(_currentHP <= 0)
-        {   
-            _scene.gameObject.SetActive(true);
-            Cursor.visible = true;
-            Destroy(gameObject);
+        if (_currentHP <= 0)
+        {
+            //player‚ªŽ€‚ñ‚¾‚çgameover
+            if (gameObject.tag == "Player")
+            {
+                _image1.gameObject.SetActive(true);
+                Destroy(gameObject);
+            }
+
+            //BOSS‚ªŽ€‚ñ‚¾‚çgameclear
+            if (gameObject.tag == "BOSS")
+            {
+                _image2.gameObject.SetActive(true);
+                Destroy(gameObject);
+            }
         }
     }
 
     public void UpdateHP(float damage)
     {
-        _currentHP = Mathf.Clamp(_currentHP - damage, 0, _maxHP);
-        _hpBar.fillAmount = _currentHP / _maxHP;
+        if (_currentHP > 0)
+        {
+            _currentHP = Mathf.Clamp(_currentHP - damage, 0, _maxHP);
+            _hpBar.fillAmount = _currentHP / _maxHP;       
+        }
     }
 }
