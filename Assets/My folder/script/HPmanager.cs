@@ -25,19 +25,24 @@ public class HPmanager : MonoBehaviour
     {
         if (_currentHP <= 0)
         {
-            //player‚ªŽ€‚ñ‚¾‚çgameover
-            if (gameObject.tag == "Player")
-            {
-                _image1.gameObject.SetActive(true);
-                Destroy(gameObject);
-            }
+            ImageLord();
+        }
+    }
 
-            //BOSS‚ªŽ€‚ñ‚¾‚çgameclear
-            if (gameObject.tag == "BOSS")
-            {
-                _image2.gameObject.SetActive(true);
-                Destroy(gameObject);
-            }
+    private void ImageLord()
+    {
+        //player‚ªŽ€‚ñ‚¾‚çgameover
+        if (gameObject.tag == "Player")
+        {
+            _image1.gameObject.SetActive(true);
+            Destroy(gameObject);
+        }
+
+        //BOSS‚ªŽ€‚ñ‚¾‚çgameclear
+        if (gameObject.tag == "BOSS")
+        {
+            _image2.gameObject.SetActive(true);
+            Destroy(gameObject);
         }
     }
 
