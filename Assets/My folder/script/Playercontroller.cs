@@ -1,29 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Playercontroller : MonoBehaviour
 {
     [SerializeField] float C_interval = 1f;
     [SerializeField] float C_n;
-    [SerializeField] float S_interval = 1f;
-    [SerializeField] float S_n;
     [SerializeField] float _macineSpeed;
     Rigidbody2D _rb;
     void Start()
     {
         Cursor.visible = false;
         C_n = C_interval;
-        S_n = S_interval;
         _rb = GetComponent<Rigidbody2D>();
     }
     // Update is called once per frame
 
     [SerializeField] ShootManager _bulletC = default;
     [SerializeField] Transform muzzle_C = default;
-    [SerializeField] ShootManager _bulletS = default;
-    [SerializeField] Transform muzzle_S1 = default;
-    [SerializeField] Transform muzzle_S2 = default;
+
     void FixedUpdate()
     {
         PlaterControl();
@@ -33,9 +29,9 @@ public class Playercontroller : MonoBehaviour
             MainBullet();
         }
 
-        else if (Input.GetButton("Fire2"))
+        if (Input.GetButton("Fire2"))
         {
-            SpecialBullet();
+            GetComponent<GaugeController>().SpecialBullet();
         }
     }
       
@@ -48,7 +44,7 @@ public class Playercontroller : MonoBehaviour
         _rb.AddForce(vec.normalized * _macineSpeed, ForceMode2D.Impulse);
     }
     
-    private void MainBullet()
+    void MainBullet()
     {
         C_n += Time.deltaTime;
         //’e‚Ì”­ŽËŠÔŠu
@@ -63,25 +59,7 @@ public class Playercontroller : MonoBehaviour
         }
     }
 
-    private void SpecialBullet()
-    {
-        S_n += Time.deltaTime;
-
-        if (S_n >= S_interval)
-        {
-            S_n = 0;
-            //special weapon
-            var bul2 = Instantiate(_bulletS, muzzle_S1.position, transform.rotation);
-            bul2.Direction = Vector3.up;
-            bul2.transform.position = muzzle_S1.position;
-
-            var bul3 = Instantiate(_bulletS, muzzle_S2.position, transform.rotation);
-            bul3.Direction = Vector3.up;
-            bul3.transform.position = muzzle_S2.position;
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "damage1")
         {
