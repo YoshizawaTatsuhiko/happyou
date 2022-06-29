@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/My folder/Title.unity
     guid: f226ecae77f884a449fa20d5604a10f9
   - enabled: 1
-    path: Assets/My folder/operation Instructions.unity
+    path: Assets/My folder/help.unity
     guid: 5dd6f323b7c815b4aaa7578c50a6ad27
   - enabled: 1
     path: Assets/My folder/announcement.unity

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Playercontroller : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [SerializeField] float C_interval = 1f;
     [SerializeField] float C_n;
@@ -17,7 +17,7 @@ public class Playercontroller : MonoBehaviour
     }
     // Update is called once per frame
 
-    [SerializeField] ShootManager _bulletC = default;
+    [SerializeField] BulletManager _bulletC = default;
     [SerializeField] Transform muzzle_C = default;
 
     void FixedUpdate()
@@ -53,9 +53,8 @@ public class Playercontroller : MonoBehaviour
             C_n = 0;
 
             //main weapon
-            var bul1 = Instantiate(_bulletC, muzzle_C.position, transform.rotation);
-            bul1.Direction = Vector3.up;
-            bul1.transform.position = muzzle_C.position;
+            var bul = Instantiate(_bulletC, muzzle_C.position, transform.rotation);
+            bul.transform.position = muzzle_C.position;
         }
     }
 

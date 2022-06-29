@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GaugeController : MonoBehaviour
 {
-    [SerializeField] ShootManager _bulletS = default;
+    [SerializeField] BulletManager _bulletS = default;
     [SerializeField] Transform muzzle_S1 = default;
     [SerializeField] Transform muzzle_S2 = default;
     [SerializeField] float _maxGauge;
@@ -31,11 +31,9 @@ public class GaugeController : MonoBehaviour
         {
             //special weapon
             var bul2 = Instantiate(_bulletS, muzzle_S1.position, transform.rotation);
-            bul2.Direction = Vector3.up;
             bul2.transform.position = muzzle_S1.position;
 
             var bul3 = Instantiate(_bulletS, muzzle_S2.position, transform.rotation);
-            bul3.Direction = Vector3.up;
             bul3.transform.position = muzzle_S2.position;
 
             //bulletのインターバル初期化
