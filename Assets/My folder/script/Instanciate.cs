@@ -9,7 +9,7 @@ public class Instanciate : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate();
+        
     }
 
     public void Instantiate()
