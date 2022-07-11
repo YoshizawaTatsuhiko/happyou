@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : HPmanager
 {
     [SerializeField] float C_interval = 1f;
     [SerializeField] float C_n;

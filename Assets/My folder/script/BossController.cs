@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossController : MonoBehaviour
+public class BossController : HPmanager
 {
     GameObject _HPmanager;
     [SerializeField] GaugeController _gaugeCon;
@@ -20,7 +20,7 @@ public class BossController : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "weapon1")
         {

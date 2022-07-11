@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class HPmanager : MonoBehaviour
+public abstract class HPmanager : MonoBehaviour
 {
-
     [SerializeField] private Image _hpBar;
     [SerializeField] private float _maxHP;
     [SerializeField] Image _image1;
@@ -51,7 +50,7 @@ public class HPmanager : MonoBehaviour
         if (_currentHP > 0)
         {
             _currentHP = Mathf.Clamp(_currentHP - damage, 0, _maxHP);
-            _hpBar.fillAmount = _currentHP / _maxHP;       
+            _hpBar.fillAmount = _currentHP / _maxHP;
         }
     }
 }
