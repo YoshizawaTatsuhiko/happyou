@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public abstract class HPmanager : MonoBehaviour
+public class HPmanager : MonoBehaviour
 {
     [SerializeField] private Image _hpBar;
     [SerializeField] private float _maxHP;
-    [SerializeField] Image _image1;
-    [SerializeField] Image _image2;
+    [SerializeField] Image _image;
 
     // Start is called before the first frame update
 
@@ -33,14 +32,14 @@ public abstract class HPmanager : MonoBehaviour
         //player‚ªŽ€‚ñ‚¾‚çgameover
         if (gameObject.tag == "Player")
         {
-            _image1.gameObject.SetActive(true);
+            _image.gameObject.SetActive(true);
             Destroy(gameObject);
         }
 
         //BOSS‚ªŽ€‚ñ‚¾‚çgameclear
         if (gameObject.tag == "BOSS")
         {
-            _image2.gameObject.SetActive(true);
+            _image.gameObject.SetActive(true);
             Destroy(gameObject);
         }
     }

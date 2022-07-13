@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class GaugeController : MonoBehaviour
 {
-    [SerializeField] BulletManager _bulletS = default;
-    [SerializeField] Transform muzzle_S1 = default;
-    [SerializeField] Transform muzzle_S2 = default;
+    [SerializeField] BulletManager _sideBullet = default;
+    [SerializeField] Transform _sideMuzzle1 = default;
+    [SerializeField] Transform _sideMuzzle2 = default;
     [SerializeField] float _maxGauge;
     float _currentGauge;
     [SerializeField] Image _gauge;
@@ -19,22 +19,16 @@ public class GaugeController : MonoBehaviour
         _gauge.fillAmount = _currentGauge;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void SpecialBullet()
     {
         if (_currentGauge >= _maxGauge)
         {
             //special weapon
-            var bul2 = Instantiate(_bulletS, muzzle_S1.position, transform.rotation);
-            bul2.transform.position = muzzle_S1.position;
+            var bul2 = Instantiate(_sideBullet, _sideMuzzle1.position, transform.rotation);
+            bul2.transform.position = _sideMuzzle1.position;
 
-            var bul3 = Instantiate(_bulletS, muzzle_S2.position, transform.rotation);
-            bul3.transform.position = muzzle_S2.position;
+            var bul3 = Instantiate(_sideBullet, _sideMuzzle2.position, transform.rotation);
+            bul3.transform.position = _sideMuzzle2.position;
 
             //bulletのインターバル初期化
             _currentGauge = 0f;

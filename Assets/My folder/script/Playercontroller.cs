@@ -1,32 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class PlayerController : HPmanager
+public class PlayerController : MonoBehaviour
 {
-    [SerializeField] float C_interval = 1f;
-    [SerializeField] float C_n;
+    [SerializeField] float _centerInterval = 1f;
+    [SerializeField] float _centerN;
     [SerializeField] float _macineSpeed;
     Rigidbody2D _rb;
     void Start()
     {
         Cursor.visible = false;
-        C_n = C_interval;
+        _centerN = _centerInterval;
         _rb = GetComponent<Rigidbody2D>();
     }
     // Update is called once per frame
 
-    [SerializeField] BulletManager _bulletC = default;
-    [SerializeField] Transform muzzle_C = default;
+    [SerializeField] BulletManager _centerBullet = default;
+    [SerializeField] Transform _centerMuzzle = default;
 
     void FixedUpdate()
     {
-        PlaterControl();
+        PlayerControl();
 
         if (Input.GetButton("Fire1"))
         {
-            MainBullet();
+            MainAttack();
         }
 
         if (Input.GetButton("Fire2"))
@@ -35,7 +34,7 @@ public class PlayerController : HPmanager
         }
     }
       
-    private void PlaterControl()
+    private void PlayerControl()
     {
         //‹óŠÔ‚Å‚Ìƒ}ƒEƒXˆÊ’u‚ÌŒvŽZ
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -44,17 +43,17 @@ public class PlayerController : HPmanager
         _rb.AddForce(vec.normalized * _macineSpeed, ForceMode2D.Impulse);
     }
     
-    void MainBullet()
+    void MainAttack()
     {
-        C_n += Time.deltaTime;
+        _centerN += Time.deltaTime;
         //’e‚Ì”­ŽËŠÔŠu
-        if (C_n >= C_interval)
+        if (_centerN >= _centerInterval)
         {
-            C_n = 0;
+            _centerN = 0;
 
             //main weapon
-            var bul = Instantiate(_bulletC, muzzle_C.position, transform.rotation);
-            bul.transform.position = muzzle_C.position;
+            var bul = Instantiate(_centerBullet, _centerMuzzle.position, transform.rotation);
+            bul.transform.position = _centerMuzzle.position;
         }
     }
 
