@@ -4,25 +4,27 @@ using UnityEngine;
 
 public class RotatingSawController : MonoBehaviour, IWeapon
 {
+    [SerializeField] Animator _anim;
+    [SerializeField] float _damage;
+    GameObject boss;
+
     public void Weapon()
     {
-        GetComponent<HPmanager>().UpdateHP(1f);
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        boss = GameObject.FindGameObjectWithTag("BOSS");
+        boss.GetComponent<HPmanager>().UpdateHP(_damage);
     }
 
     void OnTriggerStay2D(Collider2D collision)
     {
-        Weapon();
+        Debug.Log("OK");
+        if(Input.GetButton("Fire1"))
+        {
+            _anim.Play("pivot");
+
+            if (collision.gameObject.tag == "BOSS")
+            {
+                Weapon();
+            }
+        }
     }
 }

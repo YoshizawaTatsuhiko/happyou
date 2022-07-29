@@ -12,11 +12,12 @@ public class BulletToPlayer : MonoBehaviour
         _target = GameObject.FindWithTag("Player");
         Vector2 direction = _target.transform.position - transform.position;
         transform.up = direction;
+
+        if(_target == null)
+        {
+            Destroy(gameObject);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
