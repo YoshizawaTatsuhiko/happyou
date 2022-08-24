@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletToPlayer : MonoBehaviour
+public class ToPlayer : MonoBehaviour
 {
     GameObject _target;
 
@@ -18,6 +18,4 @@ public class BulletToPlayer : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RotatingSawController : MonoBehaviour, IWeapon
+public class RotatingSawController : MonoBehaviour
 {
     [SerializeField] Animator _anim;
     [SerializeField] float _damage;

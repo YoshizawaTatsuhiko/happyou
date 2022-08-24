@@ -1,4 +1,0 @@
-interface IWeapon
-{
-    void Weapon();
-}

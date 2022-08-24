@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GaugeController : MonoBehaviour
+public class SpecialController : MonoBehaviour
 {
-    [SerializeField] BulletManager _subBullet = default;
+    [SerializeField] BulletManager _spBullet = default;
     [SerializeField] Transform _specialMuzzle = default;
     [SerializeField] float _maxGauge;
     float _currentGauge;
@@ -18,7 +18,16 @@ public class GaugeController : MonoBehaviour
         _gauge.fillAmount = _currentGauge;
     }
 
-    public void SpecialBullet()
+    void FixedUpdate()
+    {
+        //右クリックでスペシャルアタック
+        if (Input.GetButton("Fire2"))
+        {
+            SpecialBullet();
+        }
+    }
+
+    void SpecialBullet()
     {
         if (_currentGauge >= _maxGauge)
         {
