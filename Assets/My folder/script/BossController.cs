@@ -12,15 +12,13 @@ public class BossController : MonoBehaviour
     {
         if (collision.gameObject.tag == "weapon1")
         {
-            _HPmanager.GetComponent<HPmanager>().UpdateHP(1);
-            _gaugeCon.UpdateGauge(0.1f);
             Debug.Log("B_hit");
         }
 
         if (collision.gameObject.tag == "weapon2")
         {
             _HPmanager.GetComponent<HPmanager>().UpdateHP(10);
-            Debug.Log("B_hit");
+            Debug.Log("S_hit");
         }
     }
 }

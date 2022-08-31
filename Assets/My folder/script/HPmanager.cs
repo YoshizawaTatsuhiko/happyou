@@ -55,9 +55,5 @@ public class HPmanager : MonoBehaviour
             //_currentHP = Mathf.Clamp(_currentHP - damage, 0, _maxHP);
             _hpBar.fillAmount = _currentHP / _maxHP;
         }
-        else if (_super == true && gameObject.tag == "Player")
-        {
-            
-        }
     }
 }

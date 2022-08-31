@@ -4,21 +4,23 @@ using UnityEngine;
 
 public abstract class Weapon : MonoBehaviour
 {
-    [SerializeField] AudioSource _audio;
-    GameObject _player;
-
-    void Start()
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        _audio = FindObjectOfType<AudioSource>();
-        _player = GameObject.Find("Player");
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.tag == "")
+        if (collision.gameObject.tag == "BOSS")
         {
-            _audio.Play();
+            Attack();
         }
     }
 
-    public abstract void AttackBehavior();
+    /// <summary> ウエポン共通の接触処理。継承先のOnTriggerEnter2Dで呼ぶ。</summary>
+    /// <param name="collision"> 接触対象 </param>
+    protected void CommonOnTrigger(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "BOSS")
+        {
+            Attack();
+        }
+    }
+
+    public abstract void Attack();
 }

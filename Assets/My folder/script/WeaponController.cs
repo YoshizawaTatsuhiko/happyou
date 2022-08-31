@@ -6,7 +6,7 @@ public class WeaponController : MonoBehaviour
 {
     [SerializeField] float _centerInterval = 1f;
     float _centerN;
-    [SerializeField] BulletManager _centerBullet = default;
+    [SerializeField] GameObject _centerBullet = default;
     [SerializeField] Transform _centerMuzzle = default;
 
     void Start()
