@@ -6315,10 +6315,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b877da85647abe488274dca6293efaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spBullet: {fileID: 0}
+  _spBullet: {fileID: 95691683587953729, guid: ef0c3e9a8d4493748ba515094f37abd8, type: 3}
   _specialMuzzle: {fileID: 252750192}
-  _maxGauge: 10
+  _maxGauge: 40
   _gauge: {fileID: 1567471500}
+  _bossHP: {fileID: 0}
 --- !u!114 &1492923870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6332,7 +6333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _centerInterval: 0.1
-  _centerBullet: {fileID: 1382564564376109604, guid: 844e19733b3b13444b031a294f65284f,
+  _centerBullet: {fileID: 7817250581771424066, guid: 844e19733b3b13444b031a294f65284f,
     type: 3}
   _centerMuzzle: {fileID: 1320976138}
 --- !u!68 &1492923871
@@ -11671,7 +11672,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1835863206
 RectTransform:
   m_ObjectHideFlags: 0
