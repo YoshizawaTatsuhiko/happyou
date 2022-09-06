@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class WeaponController : MonoBehaviour
 {
-    [SerializeField] float _centerInterval = 1f;
+    [SerializeField] float _Interval = 1f;
     float _centerN;
-    [SerializeField] GameObject _centerBullet = default;
-    [SerializeField] Transform _centerMuzzle = default;
+    [SerializeField] GameObject _Bullet = default;
+    [SerializeField] Transform _Muzzle = default;
 
     void Start()
     {
-        _centerN = _centerInterval;
+        _centerN = _Interval;
     }
     void FixedUpdate()
     {
@@ -25,13 +25,13 @@ public class WeaponController : MonoBehaviour
     {
         _centerN += Time.deltaTime;
         //’e‚Ì”­ŽËŠÔŠu
-        if (_centerN >= _centerInterval)
+        if (_centerN >= _Interval)
         {
             _centerN = 0;
 
             //main weapon
-            var bul = Instantiate(_centerBullet, _centerMuzzle.position, transform.rotation);
-            bul.transform.position = _centerMuzzle.position;
+            var bul = Instantiate(_Bullet, _Muzzle.position, transform.rotation);
+            bul.transform.position = _Muzzle.position;
         }
     }
 }

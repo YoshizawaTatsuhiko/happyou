@@ -16,4 +16,9 @@ public class SpecialAttackController : Weapon
     {
         _bossHP.UpdateHP(_damage);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        CommonOnTrigger(collision);
+    }
 }

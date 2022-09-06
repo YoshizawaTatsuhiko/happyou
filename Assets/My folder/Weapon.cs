@@ -4,23 +4,16 @@ using UnityEngine;
 
 public abstract class Weapon : MonoBehaviour
 {
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "BOSS")
-        {
-            Attack();
-        }
-    }
-
     /// <summary> ƒEƒGƒ|ƒ“‹¤’Ê‚ÌÚGˆ—BŒp³æ‚ÌOnTriggerEnter2D‚ÅŒÄ‚ÔB</summary>
     /// <param name="collision"> ÚG‘ÎÛ </param>
     protected void CommonOnTrigger(Collider2D collision)
     {
-        if (collision.gameObject.tag == "BOSS")
+        if(collision.gameObject.tag == "BOSS")
         {
             Attack();
         }
     }
 
+    /// <summary>BOSS‚ÉUŒ‚‚ª“–‚½‚Á‚½‚Ì‹¤’Ê‚Ìˆ—</summary>
     public abstract void Attack();
 }

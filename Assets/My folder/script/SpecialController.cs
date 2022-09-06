@@ -10,11 +10,9 @@ public class SpecialController : MonoBehaviour
     [SerializeField] float _maxGauge;
     float _currentGauge;
     [SerializeField] Image _gauge;
-    [SerializeField] HPmanager _bossHP;
 
     void Start()
     {
-        _bossHP = GameObject.FindGameObjectWithTag("BOSS").GetComponent<HPmanager>();
         _currentGauge = 0f;
         _gauge.fillAmount = _currentGauge;
     }
@@ -48,14 +46,6 @@ public class SpecialController : MonoBehaviour
         {
             _currentGauge = Mathf.Clamp(_currentGauge + MP, 0, _maxGauge);
             _gauge.fillAmount = _currentGauge / _maxGauge;
-        }
-    }
-
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.tag == "BOSS")
-        {
-            
         }
     }
 }

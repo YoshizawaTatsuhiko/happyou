@@ -12,15 +12,18 @@ public class HPmanager : MonoBehaviour
     private float _currentHP;
     GameObject _player;
 
-    // Start is called before the first frame update
     void Start()
     {
         _currentHP = _maxHP;
         Cursor.visible = true;
+        _player = GameObject.FindGameObjectWithTag("Player");
 
+        if(_super == true)
+        {
+            
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (_currentHP <= 0)
@@ -46,14 +49,12 @@ public class HPmanager : MonoBehaviour
         }
     }
 
+    /// <summary>HPを管理する</summary>
+    /// <param name="damage">与えるダメージ</param>
     public void UpdateHP(float damage)
     {
-        if (_currentHP > 0)
-        {
-            Debug.Log($"この行が実行された。{damage}");
-            _currentHP -= damage;
-            //_currentHP = Mathf.Clamp(_currentHP - damage, 0, _maxHP);
-            _hpBar.fillAmount = _currentHP / _maxHP;
-        }
+        Debug.Log($"{damage}のダメージを受けた");
+        _currentHP -= damage;
+        _hpBar.fillAmount = _currentHP / _maxHP;
     }
 }
