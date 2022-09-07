@@ -10,13 +10,22 @@ public class RotatingSawController : Weapon
     SpecialController _spGauge;
     HPmanager _bHP;
     Collider2D _circleCol;
+    bool _judge = false;
 
     void Start()
     {
         _spGauge = FindObjectOfType<SpecialController>();
         _bHP = GameObject.FindGameObjectWithTag("BOSS").GetComponent<HPmanager>();
         _circleCol = GetComponent<CircleCollider2D>();
-        _circleCol.enabled = false;
+    }
+
+    void Update()
+    {
+        if(_judge == true)
+        {
+            _circleCol.enabled = true;
+            _anim.Play("Pivot");
+        }
     }
 
     public override void Attack()
@@ -31,8 +40,11 @@ public class RotatingSawController : Weapon
         {
             Debug.Log("OK");
             CommonOnTrigger(collision);
-            _circleCol.enabled = true;
-            _anim.Play("pivot");
+            _judge = true;
+        }
+        else
+        {
+            _judge = false;
         }
     }
 }
