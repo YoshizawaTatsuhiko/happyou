@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class ToPlayer : MonoBehaviour
 {
-    GameObject _target;
+    GameObject _target = default;
 
-    // Start is called before the first frame update
     void Start()
     {
         _target = GameObject.FindWithTag("Player");
-        Vector2 direction = _target.transform.position - transform.position;
-        transform.up = direction;
 
-        if(_target == null)
+        if(_target != null)
+        {
+            Vector2 direction = _target.transform.position - transform.position;
+            transform.up = direction;
+        }
+        else
         {
             Destroy(gameObject);
         }

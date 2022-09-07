@@ -14,7 +14,7 @@ public class SpecialAttackController : Weapon
 
     public override void Attack()
     {
-        _bossHP.UpdateHP(_damage);
+        _bossHP.ReduceHP(_damage);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

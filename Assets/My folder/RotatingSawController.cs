@@ -9,30 +9,30 @@ public class RotatingSawController : Weapon
     [SerializeField] float _charge;
     SpecialController _spGauge;
     HPmanager _bHP;
+    Collider2D _circleCol;
 
     void Start()
     {
         _spGauge = FindObjectOfType<SpecialController>();
         _bHP = GameObject.FindGameObjectWithTag("BOSS").GetComponent<HPmanager>();
-    }
-
-    void Update()
-    {
-        if(Input.GetButton("Fire1"))
-        {
-            _anim.Play("pivot");
-        }
+        _circleCol = GetComponent<CircleCollider2D>();
+        _circleCol.enabled = false;
     }
 
     public override void Attack()
     {
-        _bHP.UpdateHP(_damage);
+        _bHP.ReduceHP(_damage);
         _spGauge.UpdateGauge(_charge);
     }
 
     void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("OK");
-        CommonOnTrigger(collision);
+        if (Input.GetButton("Fire1"))
+        {
+            Debug.Log("OK");
+            CommonOnTrigger(collision);
+            _circleCol.enabled = true;
+            _anim.Play("pivot");
+        }
     }
 }

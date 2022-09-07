@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponController : MonoBehaviour
+public class DefaultWeaponController : MonoBehaviour
 {
     [SerializeField] float _Interval = 1f;
     float _centerN;
@@ -29,7 +29,7 @@ public class WeaponController : MonoBehaviour
         {
             _centerN = 0;
 
-            //main weapon
+            //default weapon
             var bul = Instantiate(_Bullet, _Muzzle.position, transform.rotation);
             bul.transform.position = _Muzzle.position;
         }
