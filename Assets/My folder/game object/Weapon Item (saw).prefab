@@ -35,7 +35,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6530642771625371589}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &350368466363001102
 SpriteRenderer:
@@ -128,7 +128,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 6.43
+  m_Radius: 8.19
 --- !u!114 &350368466363001097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,7 +173,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6530642771625371589}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5476707702923254177
 SpriteRenderer:
@@ -255,8 +255,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 350368466363001103}
   - {fileID: 6578228409668064897}
+  - {fileID: 350368466363001103}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -267,6 +267,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6530642771625371589}
     m_Modifications:
+    - target: {fileID: 3485074681643942449, guid: c1ca84114d2231848ada2cf0cb2c1eea,
+        type: 3}
+      propertyPath: m_Radius
+      value: 8.19
+      objectReference: {fileID: 0}
     - target: {fileID: 4565841643716137209, guid: c1ca84114d2231848ada2cf0cb2c1eea,
         type: 3}
       propertyPath: m_Name
