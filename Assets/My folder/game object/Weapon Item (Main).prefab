@@ -9,6 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6301469380014580689}
+  - component: {fileID: 6271035897597095422}
+  - component: {fileID: 6766115759711469224}
+  - component: {fileID: 7986264091826514912}
   m_Layer: 0
   m_Name: Weapon Item (Main)
   m_TagString: Untagged
@@ -33,6 +36,56 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6271035897597095422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2926873142985493365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4c13ccdadc2a5b40bbc15232e619354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weaponType: 0
+--- !u!58 &6766115759711469224
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2926873142985493365}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.008303642, y: -0.019374847}
+  serializedVersion: 2
+  m_Radius: 0.2701788
+--- !u!50 &7986264091826514912
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2926873142985493365}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &7799575036249511290
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,7 +111,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7799575036249511290}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.791, y: -0.33140755, z: 0.009384446}
+  m_LocalPosition: {x: -0.0077904463, y: -0.02340746, z: 0.009384446}
   m_LocalScale: {x: 0.33709, y: 0.33709, z: 0.33709}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -157,12 +210,12 @@ PrefabInstance:
     - target: {fileID: 2479270423193495422, guid: 844e19733b3b13444b031a294f65284f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.7867904
+      value: -0.012
       objectReference: {fileID: 0}
     - target: {fileID: 2479270423193495422, guid: 844e19733b3b13444b031a294f65284f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.33000004
+      value: -0.022
       objectReference: {fileID: 0}
     - target: {fileID: 2479270423193495422, guid: 844e19733b3b13444b031a294f65284f,
         type: 3}
@@ -210,27 +263,10 @@ PrefabInstance:
       value: bullet_c
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 7546388671946360744, guid: 844e19733b3b13444b031a294f65284f, type: 3}
+    - {fileID: 9091992159454037326, guid: 844e19733b3b13444b031a294f65284f, type: 3}
+    - {fileID: 3951678159254243288, guid: 844e19733b3b13444b031a294f65284f, type: 3}
+    - {fileID: 1315809714942266263, guid: 844e19733b3b13444b031a294f65284f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 844e19733b3b13444b031a294f65284f, type: 3}
---- !u!1 &4563311540087563857 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7817250581771424066, guid: 844e19733b3b13444b031a294f65284f,
-    type: 3}
-  m_PrefabInstance: {fileID: 5992127641441777427}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &4688626754859979345
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4563311540087563857}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4c13ccdadc2a5b40bbc15232e619354, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _weaponType: 0
 --- !u!4 &8160649002731901037 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2479270423193495422, guid: 844e19733b3b13444b031a294f65284f,

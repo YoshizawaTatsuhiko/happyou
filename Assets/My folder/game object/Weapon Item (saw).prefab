@@ -11,9 +11,6 @@ GameObject:
   m_Component:
   - component: {fileID: 350368466363001103}
   - component: {fileID: 350368466363001102}
-  - component: {fileID: 350368466363001098}
-  - component: {fileID: 854727897387776965}
-  - component: {fileID: 350368466363001097}
   m_Layer: 7
   m_Name: Item(saw)
   m_TagString: damage1
@@ -90,59 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &350368466363001098
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 4565841643716137214, guid: c1ca84114d2231848ada2cf0cb2c1eea,
-    type: 3}
-  m_PrefabInstance: {fileID: 4287957407674563060}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 350368466363001101}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!58 &854727897387776965
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 3485074681643942449, guid: c1ca84114d2231848ada2cf0cb2c1eea,
-    type: 3}
-  m_PrefabInstance: {fileID: 4287957407674563060}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 350368466363001101}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 8.19
---- !u!114 &350368466363001097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 4565841643716137213, guid: c1ca84114d2231848ada2cf0cb2c1eea,
-    type: 3}
-  m_PrefabInstance: {fileID: 4287957407674563060}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 350368466363001101}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4c13ccdadc2a5b40bbc15232e619354, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _weaponType: 1
 --- !u!1 &5923619625009565890
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,6 +180,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6530642771625371589}
+  - component: {fileID: 6368609492497685879}
+  - component: {fileID: 798020942635630882}
+  - component: {fileID: 6063551992916802648}
   m_Layer: 0
   m_Name: Weapon Item (saw)
   m_TagString: Untagged
@@ -260,6 +207,56 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6368609492497685879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6309284577322971081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4c13ccdadc2a5b40bbc15232e619354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weaponType: 1
+--- !u!58 &798020942635630882
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6309284577322971081}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.05, y: 0.025}
+  serializedVersion: 2
+  m_Radius: 0.28
+--- !u!50 &6063551992916802648
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6309284577322971081}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &4287957407674563060
 PrefabInstance:
   m_ObjectHideFlags: 0

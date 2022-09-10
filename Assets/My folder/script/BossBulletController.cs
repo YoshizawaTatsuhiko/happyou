@@ -4,7 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 
-public class BossBulletManager : MonoBehaviour
+public class BossBulletController : MonoBehaviour
 {
     //’e‘¬
     [SerializeField] float _speed = 3f;
