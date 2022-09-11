@@ -8,14 +8,14 @@ public class RotatingSawController : Weapon
     [SerializeField] float _damage;
     [SerializeField] float _charge;
     SpecialController _spGauge;
-    HPmanager _bHP;
+    HpManager _bHP;
     Collider2D _circleCol;
     bool _judge = false;
 
     void Start()
     {
         _spGauge = FindObjectOfType<SpecialController>();
-        _bHP = GameObject.FindGameObjectWithTag("BOSS").GetComponent<HPmanager>();
+        _bHP = GameObject.FindGameObjectWithTag("BOSS").GetComponent<HpManager>();
         _circleCol = GetComponent<CircleCollider2D>();
     }
 

@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
         //UŒ‚‚ğó‚¯‚½‚çƒ_ƒ[ƒW‚ğ‚­‚ç‚¤
         if (collision.gameObject.tag == "damage1")
         {
-            GetComponent<HPmanager>().ReduceHP(1f);
+            GetComponent<HpManager>().ReduceHP(1f);
             Debug.Log("P_hit");
         }
     }

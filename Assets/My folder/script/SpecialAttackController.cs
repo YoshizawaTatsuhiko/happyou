@@ -5,11 +5,11 @@ using UnityEngine;
 public class SpecialAttackController : Weapon
 {
     [SerializeField] float _damage = 1.0f;
-    HPmanager _bossHP;
+    HpManager _bossHP;
 
     void Start()
     {
-        _bossHP = GameObject.FindGameObjectWithTag("BOSS").GetComponent<HPmanager>();
+        _bossHP = GameObject.FindGameObjectWithTag("BOSS").GetComponent<HpManager>();
     }
 
     public override void Attack()

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class HPmanager : MonoBehaviour
+public class HpManager : MonoBehaviour
 {
     [SerializeField] private Image _hpBar;
     /// <summary>ç≈ëÂHP</summary>

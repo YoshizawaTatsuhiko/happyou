@@ -20,8 +20,7 @@ public class BossBulletController : MonoBehaviour
         if(_player != null)
         {        
             //プレイヤーに向かう方向ベクトルを取得する
-            Vector3 direction = _player.position - transform.position;
-            direction = direction.normalized;
+            Vector3 direction = (_player.position - transform.position).normalized;
             //弾の射出方向
             _rb = GetComponent<Rigidbody2D>();
             _rb.velocity = direction * _speed;

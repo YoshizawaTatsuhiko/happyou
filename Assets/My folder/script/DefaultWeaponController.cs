@@ -25,7 +25,7 @@ public class DefaultWeaponController : MonoBehaviour
     {
         _centerN += Time.deltaTime;
         //’e‚Ì”­ŽËŠÔŠu
-        if (_centerN >= _Interval)
+        if (_centerN > _Interval)
         {
             _centerN = 0;
 

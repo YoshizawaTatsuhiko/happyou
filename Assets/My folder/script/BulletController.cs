@@ -11,24 +11,22 @@ public class BulletController : Weapon
     [SerializeField] float _damage = 1f;    //ダメージ値
     [SerializeField] float _charge = 1f;    //スペシャルゲージ上昇値
     Rigidbody2D _rb;
-    HPmanager _bossHP;
+    HpManager _bossHP;
     SpecialController _spGauge;
 
-    void Awake()
-    {
-        _bossHP = GameObject.FindGameObjectWithTag("BOSS").GetComponent<HPmanager>();
-    }
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();    //弾の射出方向
+        _rb.velocity = Vector2.up * _speed;    //弾の速度
         _spGauge = FindObjectOfType<SpecialController>();
         Destroy(gameObject, _lifeTime);    //時間が来たら消失
+        _bossHP = GameObject.FindGameObjectWithTag("BOSS").GetComponent<HpManager>();
     }
 
-    void Update()
-    {
-        _rb.velocity = Vector2.up * _speed;    //弾の速度
-    }
+    //void Update()
+    //{
+    //    _rb.velocity = Vector2.up * _speed;    //弾の速度
+    //}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
