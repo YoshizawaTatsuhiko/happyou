@@ -5,18 +5,22 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
-    GameObject _HPmanager;
-    [SerializeField] SpecialController _gaugeCon;
-
+    Animator _anim;
+    void Start()
+    {
+        _anim = GetComponent<Animator>();
+    }
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "weapon1")
         {
+            _anim.Play("Hit Effect");
             Debug.Log("B_hit");
         }
 
         if (collision.gameObject.tag == "weapon2")
         {
+            _anim.Play("Special Hit Effect");
             Debug.Log("S_hit");
         }
     }
