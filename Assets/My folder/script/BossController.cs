@@ -14,13 +14,13 @@ public class BossController : MonoBehaviour
     {
         if (collision.gameObject.tag == "weapon1")
         {
-            _anim.Play("Hit Effect");
+            _anim.SetTrigger("isHit");
             Debug.Log("B_hit");
         }
 
         if (collision.gameObject.tag == "weapon2")
         {
-            _anim.Play("Special Hit Effect");
+            _anim.SetTrigger("isSpecialHit");
             Debug.Log("S_hit");
         }
     }
