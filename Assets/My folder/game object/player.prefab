@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6926057397891956462}
   - component: {fileID: 6926057397891956463}
   - component: {fileID: 6926057397891956448}
-  - component: {fileID: 6926057397891956452}
   - component: {fileID: 6926057397891956451}
   - component: {fileID: 6926057397891956455}
   - component: {fileID: 6926057397891956443}
@@ -110,38 +109,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!68 &6926057397891956452
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6926057397891956456}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: 0.22569352, y: -0.13385852}
-  - {x: 0.44850504, y: -0.629287}
-  - {x: 0.21776946, y: -0.6318413}
-  - {x: 0.28459728, y: -0.9391637}
-  - {x: -0.3138659, y: -0.94481295}
-  - {x: -0.21661253, y: -0.63664937}
-  - {x: -0.46348068, y: -0.63938224}
-  - {x: -0.23630027, y: -0.1439549}
-  - {x: -0.23823142, y: 0.5435}
-  - {x: -0.005077086, y: 0.936123}
-  - {x: 0.22849347, y: 0.559005}
-  - {x: 0.23218155, y: -0.15328324}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
 --- !u!114 &6926057397891956451
 MonoBehaviour:
   m_ObjectHideFlags: 0

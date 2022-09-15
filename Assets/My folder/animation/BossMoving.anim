@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: "\u30A6\u30ED\u30A6\u30ED"
+  m_Name: BossMoving
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0

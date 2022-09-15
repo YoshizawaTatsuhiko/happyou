@@ -6,9 +6,9 @@ using UnityEngine;
 
 public class BossBulletController : MonoBehaviour
 {
-    //’e‘¬
+    /// <summary>’e‘¬</summary>
     [SerializeField] float _speed = 3f;
-    //’eÁ¸‚Ü‚Å‚ÌŠÔ
+    /// <summary>’eÁ¸‚Ü‚Å‚ÌŠÔ</summary>
     [SerializeField] float b_lifeTime = 5f;
     Rigidbody2D _rb;
     Transform _player;
@@ -24,9 +24,13 @@ public class BossBulletController : MonoBehaviour
             //’e‚ÌËo•ûŒü
             _rb = GetComponent<Rigidbody2D>();
             _rb.velocity = direction * _speed;
+            //ŠÔ‚ª—ˆ‚½‚çÁ¸
+            Destroy(gameObject, b_lifeTime);
         }
-        //ŠÔ‚ª—ˆ‚½‚çÁ¸
-        Destroy(gameObject, b_lifeTime);
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -2,28 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using DG.Tweening;
 
 public class HpManager : MonoBehaviour
 {
-    [SerializeField] private Image _hpBar;
+    [SerializeField] float _changeInterval;
+    [SerializeField] Slider _slider = default;
     /// <summary>最大HP</summary>
     [SerializeField] private float _maxHP;
     [SerializeField] Image _image;
-    /// <summary>デバッグ用 GodMode</summary>
+    /// <summary>GodMode</summary>
     [SerializeField] bool _super = false;
-    /// <summary>現在HP</summary>
+    /// <summary>現在のHP</summary>
     private float _currentHP;
-    GameObject _player;
+    //GameObject _player;
 
     void Start()
     {
         _currentHP = _maxHP;
         Cursor.visible = true;
-        _player = GameObject.FindGameObjectWithTag("Player");
+        //_player = GameObject.FindGameObjectWithTag("Player");
 
         if(_super == true && gameObject.tag == "Player")
         {
-            _currentHP += Mathf.Infinity;
+            _currentHP = Mathf.Infinity;
         }
     }
 
@@ -37,13 +39,13 @@ public class HpManager : MonoBehaviour
 
     private void ImageLord()
     {
-        //playerが死んだらgameover
+        //playerが死んだらGameOver
         if (gameObject.tag == "Player")
         {
             _image.gameObject.SetActive(true);
         }
 
-        //BOSSが死んだらgameclear
+        //BOSSが死んだらGameClear
         if (gameObject.tag == "BOSS")
         {
             _image.gameObject.SetActive(true);
@@ -55,8 +57,10 @@ public class HpManager : MonoBehaviour
     /// <param name="damage">与えるダメージ</param>
     public void ReduceHP(float damage)
     {
-        //Debug.Log($"{damage}のダメージを受けた");
-        _currentHP = Mathf.Clamp(_currentHP - damage, 0, _maxHP);
-        _hpBar.fillAmount = _currentHP / _maxHP;
+        _currentHP -= damage;
+        //_currentHP = Mathf.Clamp(_currentHP - damage, 0, _maxHP);
+        //_hpBar.fillAmount = _currentHP / _maxHP;
+        DOTween.To(() => _slider.value,
+            x => _slider.value = x, _currentHP / _maxHP, _changeInterval);
     }
 }

@@ -23,11 +23,6 @@ public class BulletController : Weapon
         _bossHP = GameObject.FindGameObjectWithTag("BOSS").GetComponent<HpManager>();
     }
 
-    //void Update()
-    //{
-    //    _rb.velocity = Vector2.up * _speed;    //’e‚Ì‘¬“x
-    //}
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "BOSS" || collision.gameObject.tag == "damage1")
