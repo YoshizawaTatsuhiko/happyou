@@ -6,7 +6,7 @@ using DG.Tweening;
 
 public class HpManager : MonoBehaviour
 {
-    [SerializeField] float _changeInterval;
+    [SerializeField] float _changeInterval = 1f;
     [SerializeField] Slider _slider = default;
     /// <summary>Å‘åHP</summary>
     [SerializeField] private float _maxHP;
@@ -53,13 +53,14 @@ public class HpManager : MonoBehaviour
         Destroy(gameObject);
     }
 
-    /// <summary>HP‚ğŠÇ—‚·‚é</summary>
+    /// <summary>damage‚ğŠÇ—‚·‚é</summary>
     /// <param name="damage">—^‚¦‚éƒ_ƒ[ƒW</param>
     public void ReduceHP(float damage)
     {
-        _currentHP -= damage;
         //_currentHP = Mathf.Clamp(_currentHP - damage, 0, _maxHP);
         //_hpBar.fillAmount = _currentHP / _maxHP;
+
+        _currentHP -= damage;
         DOTween.To(() => _slider.value,
             x => _slider.value = x, _currentHP / _maxHP, _changeInterval);
     }

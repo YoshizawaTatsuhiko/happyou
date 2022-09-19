@@ -9,7 +9,7 @@ public class ChangeWeapon : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.TryGetComponent<Item>(out Item item))
+        if(collision.TryGetComponent(out Item item))
         {
             switch (item.WeaponType)
             {
