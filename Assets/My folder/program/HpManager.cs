@@ -31,7 +31,7 @@ public class HpManager : MonoBehaviour
 
     void Update()
     {
-        if (_currentHP <= 0)
+        if(_currentHP <= 0)
         {
             ImageLord();
         }
@@ -40,26 +40,23 @@ public class HpManager : MonoBehaviour
     private void ImageLord()
     {
         //player‚ª€‚ñ‚¾‚çGameOver
-        if (gameObject.tag == "Player")
+        if(gameObject.tag == "Player")
         {
             _image.gameObject.SetActive(true);
         }
 
         //BOSS‚ª€‚ñ‚¾‚çGameClear
-        if (gameObject.tag == "BOSS")
+        else if(gameObject.tag == "BOSS")
         {
             _image.gameObject.SetActive(true);
         }
         Destroy(gameObject);
     }
 
-    /// <summary>damage‚ğŠÇ—‚·‚é</summary>
+    /// <summary>HP‚ğŠÇ—‚·‚é</summary>
     /// <param name="damage">—^‚¦‚éƒ_ƒ[ƒW</param>
     public void ReduceHP(float damage)
     {
-        //_currentHP = Mathf.Clamp(_currentHP - damage, 0, _maxHP);
-        //_hpBar.fillAmount = _currentHP / _maxHP;
-
         _currentHP -= damage;
         DOTween.To(() => _slider.value,
             x => _slider.value = x, _currentHP / _maxHP, _changeInterval);

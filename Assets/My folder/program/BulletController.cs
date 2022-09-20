@@ -16,10 +16,10 @@ public class BulletController : Weapon
 
     void Start()
     {
-        _rb = GetComponent<Rigidbody2D>();    //’e‚ÌËo•ûŒü
+        _rb = GetComponent<Rigidbody2D>();
         _rb.velocity = Vector2.up * _speed;    //’e‚Ì‘¬“x
-        _spGauge = FindObjectOfType<SpecialController>();
         Destroy(gameObject, _lifeTime);    //ŠÔ‚ª—ˆ‚½‚çÁ¸
+        _spGauge = FindObjectOfType<SpecialController>();
         _bossHP = GameObject.FindGameObjectWithTag("BOSS").GetComponent<HpManager>();
     }
 

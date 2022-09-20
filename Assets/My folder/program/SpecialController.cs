@@ -8,7 +8,7 @@ public class SpecialController : MonoBehaviour
 {
     /// <summary>ゲージの減少速度</summary>
     [SerializeField] float _changeaInterval = 1f;
-    /// <summary>スキルゲージ</summary>
+    /// <summary>スペシャルゲージ</summary>
     [SerializeField] Slider _slider = default;
     [SerializeField] GameObject _spBullet = default;
     [SerializeField] Transform _specialMuzzle = default;
@@ -45,7 +45,7 @@ public class SpecialController : MonoBehaviour
         }
     }
 
-    /// <summary>スキルを管理する</summary>
+    /// <summary>スペシャルゲージを管理する</summary>
     /// <param name="SP">ゲージの増加量</param>
     public void UpdateGauge(float SP)
     {
