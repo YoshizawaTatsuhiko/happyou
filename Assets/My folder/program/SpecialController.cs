@@ -6,11 +6,15 @@ using DG.Tweening;
 
 public class SpecialController : MonoBehaviour
 {
+    /// <summary>ゲージの減少速度</summary>
     [SerializeField] float _changeaInterval = 1f;
+    /// <summary>スキルゲージ</summary>
     [SerializeField] Slider _slider = default;
     [SerializeField] GameObject _spBullet = default;
     [SerializeField] Transform _specialMuzzle = default;
+    /// <summary>ゲージの最大量</summary>
     [SerializeField] float _maxGauge;
+    /// <summary>現在のゲージ量</summary>
     float _currentGauge;
 
     void Start()
@@ -29,7 +33,7 @@ public class SpecialController : MonoBehaviour
 
     void SpecialWeapon()
     {
-        if (_currentGauge == _maxGauge)
+        if(_currentGauge == _maxGauge)
         {
             //special weapon
             var s_weapon = Instantiate
@@ -41,11 +45,13 @@ public class SpecialController : MonoBehaviour
         }
     }
 
-    public void UpdateGauge(float MP)
+    /// <summary>スキルを管理する</summary>
+    /// <param name="SP">ゲージの増加量</param>
+    public void UpdateGauge(float SP)
     {
-        if (_currentGauge < _maxGauge)
+        if(_currentGauge < _maxGauge)
         {
-            _currentGauge += MP;
+            _currentGauge += SP;
             DOTween.To(() => _slider.value, 
                 x => _slider.value = x, _currentGauge / _maxGauge, _changeaInterval);
         }
