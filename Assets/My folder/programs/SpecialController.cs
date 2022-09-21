@@ -14,7 +14,7 @@ public class SpecialController : MonoBehaviour
     [SerializeField] float _maxGauge;
     /// <summary>Œ»İ‚ÌƒQ[ƒW—Ê</summary>
     float _currentGauge;
-
+    ///<summary>Special class ‚©‚ç Special Weapon ‚Ì‹““®‚ğæ‚Á‚Ä‚­‚é</summary>
     Special _sp;
 
     void Start()
