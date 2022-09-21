@@ -13,7 +13,7 @@ public class ChangeWeapon : MonoBehaviour
         {
             switch (item.WeaponType)
             {
-                case WeaponType.main:
+                case WeaponType.bullet:
                     _main.SetActive(true);
                     _saw.SetActive(false);
                     break;
@@ -31,7 +31,7 @@ public class ChangeWeapon : MonoBehaviour
  public enum WeaponType
 {
     /// <summary>デフォルト武器</summary>
-    main,
+    bullet,
     /// <summary>近距離のこぎり</summary>
     saw,
 }

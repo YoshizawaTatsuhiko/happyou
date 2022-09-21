@@ -15,17 +15,14 @@ public class HpManager : MonoBehaviour
     [SerializeField] bool _super = false;
     /// <summary>åªç›ÇÃHP</summary>
     private float _currentHP;
-    //GameObject _player;
 
     void Start()
     {
         _currentHP = _maxHP;
-        Cursor.visible = true;
-        //_player = GameObject.FindGameObjectWithTag("Player");
 
         if(_super == true && gameObject.tag == "Player")
         {
-            _currentHP = Mathf.Infinity;
+            _currentHP += Mathf.Infinity;
         }
     }
 
@@ -43,12 +40,14 @@ public class HpManager : MonoBehaviour
         if(gameObject.tag == "Player")
         {
             _image.gameObject.SetActive(true);
+            Cursor.visible = true;
         }
 
         //BOSSÇ™éÄÇÒÇæÇÁGameClear
         else if(gameObject.tag == "BOSS")
         {
-            _image.gameObject.SetActive(true);
+            _image.gameObject.SetActive(true); 
+            Cursor.visible = true;
         }
         Destroy(gameObject);
     }

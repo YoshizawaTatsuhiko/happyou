@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3504526877298223114}
   - component: {fileID: 3504526877298223115}
   - component: {fileID: 3504526877298223112}
-  - component: {fileID: 4510689699146318675}
+  - component: {fileID: 1673034811776464712}
   - component: {fileID: 3504526877298223113}
   m_Layer: 0
   m_Name: player
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _main: {fileID: 0}
   _saw: {fileID: 0}
---- !u!114 &4510689699146318675
+--- !u!114 &1673034811776464712
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,11 +168,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b877da85647abe488274dca6293efaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _changeaInterval: 1
+  _changeInterval: 1
   _slider: {fileID: 0}
-  _spBullet: {fileID: 95691683587953729, guid: ef0c3e9a8d4493748ba515094f37abd8, type: 3}
-  _specialMuzzle: {fileID: 9047300310217136267}
-  _maxGauge: 50
+  _maxGauge: 0
 --- !u!60 &3504526877298223113
 PolygonCollider2D:
   m_ObjectHideFlags: 0

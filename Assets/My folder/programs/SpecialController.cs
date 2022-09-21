@@ -7,19 +7,20 @@ using DG.Tweening;
 public class SpecialController : MonoBehaviour
 {
     /// <summary>ゲージの減少速度</summary>
-    [SerializeField] float _changeaInterval = 1f;
+    [SerializeField] float _changeInterval = 1f;
     /// <summary>スペシャルゲージ</summary>
     [SerializeField] Slider _slider = default;
-    [SerializeField] GameObject _spBullet = default;
-    [SerializeField] Transform _specialMuzzle = default;
     /// <summary>ゲージの最大量</summary>
     [SerializeField] float _maxGauge;
     /// <summary>現在のゲージ量</summary>
     float _currentGauge;
 
+    Special _sp;
+
     void Start()
     {
         _currentGauge = 0f;
+        _sp = FindObjectOfType<Special>();
     }
 
     void Update()
@@ -27,21 +28,11 @@ public class SpecialController : MonoBehaviour
         //右クリックでスペシャルアタック
         if (Input.GetButton("Fire2"))
         {
-            SpecialWeapon();
-        }
-    }
-
-    void SpecialWeapon()
-    {
-        if(_currentGauge == _maxGauge)
-        {
-            //special weapon
-            var s_weapon = Instantiate
-                (_spBullet, _specialMuzzle.position, transform.rotation);
-            s_weapon.transform.position = _specialMuzzle.position;
-
-            //Special Gaugeの初期化
-            _currentGauge = 0f;
+            if (_currentGauge == _maxGauge)
+            {
+                _sp.SpecialWeapon();
+                _currentGauge = 0f;  //Special Gaugeの初期化
+            }
         }
     }
 
@@ -53,7 +44,7 @@ public class SpecialController : MonoBehaviour
         {
             _currentGauge += SP;
             DOTween.To(() => _slider.value, 
-                x => _slider.value = x, _currentGauge / _maxGauge, _changeaInterval);
+                x => _slider.value = x, _currentGauge / _maxGauge, _changeInterval);
         }
     }
 }

@@ -26,7 +26,8 @@ public class SceneLoad : MonoBehaviour
     {
         if(_image != null)
         {
-            _image.DOFade(1f, _fadeTime).OnComplete(() => SceneManager.LoadScene(sceneName));
+            _image.DOFade(1f, _fadeTime)
+                .OnComplete(() => SceneManager.LoadScene(sceneName));
         }
         else
         {

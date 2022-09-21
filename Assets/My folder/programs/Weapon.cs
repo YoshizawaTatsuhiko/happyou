@@ -14,6 +14,6 @@ public abstract class Weapon : MonoBehaviour
         }
     }
 
-    /// <summary>BOSS‚ÉUŒ‚‚ª“–‚½‚Á‚½‚Ì‹¤’Ê‚Ìˆ—</summary>
-    public abstract void Attack();
+    ///<summary>BOSS‚ÉUŒ‚‚ª“–‚½‚Á‚½‚Ìˆ—</summary>
+    protected abstract void Attack();
 }

@@ -32,7 +32,7 @@ public class BulletController : Weapon
         }
     }
 
-    public override void Attack()
+    protected override void Attack()
     {
         _bossHP.ReduceHP(_damage);
         _spGauge.UpdateGauge(_charge);
