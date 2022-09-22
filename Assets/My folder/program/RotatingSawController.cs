@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class RotatingSawController : Weapon
 {
+    /// <summary>与えるダメージ</summary>
     [SerializeField] float _damage;
+    /// <summary>スキルゲージ上昇値</summary>
     [SerializeField] float _charge;
+    /// <summary>スペシャルゲージ</summary>
     SpecialController _spGauge;
+    /// <summary>BOSSのHP</summary>
     HpManager _bHP;
     Collider2D _circleCol;
     Animator _anim;

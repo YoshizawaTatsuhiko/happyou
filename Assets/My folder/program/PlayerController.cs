@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    /// <summary>‹@‘Ì‚ÌˆÚ“®‘¬“x</summary>
     [SerializeField] float _macineSpeed;
     Rigidbody2D _rb;
     void Start()
     {
-        Cursor.visible = false;
+        //Cursor.visible = false;
         _rb = GetComponent<Rigidbody2D>();
     }
 

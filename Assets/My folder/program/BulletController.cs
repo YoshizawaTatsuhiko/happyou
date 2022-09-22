@@ -6,18 +6,24 @@ using UnityEngine;
 
 public class BulletController : Weapon
 {
-    [SerializeField] float _speed = 3f;    //弾速
-    [SerializeField] float _lifeTime = 5f;    //弾消失までの時間
-    [SerializeField] float _damage = 1f;    //ダメージ値
-    [SerializeField] float _charge = 1f;    //スペシャルゲージ上昇値
+    /// <summary>弾速</summary>
+    [SerializeField] float _speed = 3f;
+    /// <summary>弾消失までの時間</summary>
+    [SerializeField] float _lifeTime = 5f;
+    /// <summary>与えるダメージ</summary>
+    [SerializeField] float _damage = 1f;
+    /// <summary>スペシャルゲージ上昇値</summary>
+    [SerializeField] float _charge = 1f;
     Rigidbody2D _rb;
+    /// <summary>BOSSのHP</summary>
     HpManager _bossHP;
+    /// <summary>スペシャルゲージ</summary>
     SpecialController _spGauge;
 
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
-        _rb.velocity = Vector2.up * _speed;    //弾の速度
+        _rb.velocity = Vector2.up * _speed;    //弾のベクトル
         Destroy(gameObject, _lifeTime);    //時間が来たら消失
         _spGauge = FindObjectOfType<SpecialController>();
         _bossHP = GameObject.FindGameObjectWithTag("BOSS").GetComponent<HpManager>();
