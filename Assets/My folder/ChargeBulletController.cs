@@ -19,6 +19,10 @@ public class ChargeBulletController : Weapon
         _spGauge = FindObjectOfType<SpecialController>();
     }
 
+    /// <summary>弾のステータスを管理する</summary>
+    /// <param name="speed">弾速</param>
+    /// <param name="damege">与えるダメージ</param>
+    /// <param name="charge">スペシャルゲージ上昇値</param>
     public void ChargeBulletValue(float speed, float damege, float charge)
     {
         _rb.velocity = Vector2.up * speed;

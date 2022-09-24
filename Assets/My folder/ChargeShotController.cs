@@ -20,6 +20,8 @@ public class ChargeShotController : MonoBehaviour
     [SerializeField] float _damage = 1f;
     /// <summary>スペシャルゲージ上昇値</summary>
     [SerializeField] float _charge = 1f;
+    /// <summary>_bulletの拡大倍率</summary>
+    [SerializeField] float _scaleMagnification = 0f;
     AudioSource _chargeSound;
     ChargeBulletController _cbc;
 
@@ -30,8 +32,7 @@ public class ChargeShotController : MonoBehaviour
 
     void Update()
     {
-        Vector2 bulletScale;  //弾の大きさ
-        bulletScale = _bullet.transform.localScale;
+        Vector2 bulletScale = _bullet.transform.localScale;  //弾の大きさ
 
         //左クリックを押している(チャージしている)間の処理
         if(Input.GetButton("Fire1"))
@@ -42,8 +43,8 @@ public class ChargeShotController : MonoBehaviour
 
             if(_chargeTimer <= _chargeTime)
             {
-                bulletScale.x += 0.1f;
-                bulletScale.y += 0.1f;
+                bulletScale.x += _scaleMagnification;
+                bulletScale.y += _scaleMagnification;
             }
         }
 
