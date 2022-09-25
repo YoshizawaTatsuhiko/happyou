@@ -6,8 +6,18 @@ using UnityEngine;
 
 public class ChargeBulletController : Weapon
 {
-    float _damage;
-    float _charge;
+    /// <summary>弾速</summary>
+    [SerializeField] float _speed = 1f;
+    /// <summary>与えるダメージ</summary>
+    [SerializeField] float _damage = 1f;
+    /// <summary>スペシャルゲージ上昇値</summary>
+    [SerializeField] float _charge = 1f;
+    /// <summary>チャージ時間の最大値</summary>
+    [SerializeField] float _chargeTime = 3f;
+    /// <summary>チャージ時間の計測</summary>
+    float _chargeTimer = 0f;
+    /// <summary>_bulletの拡大倍率</summary>
+    [SerializeField] float _scaleMagnification = 1f;
     Rigidbody2D _rb;
     HpManager _bossHp;
     SpecialController _spGauge;
@@ -19,15 +29,61 @@ public class ChargeBulletController : Weapon
         _spGauge = FindObjectOfType<SpecialController>();
     }
 
-    /// <summary>弾のステータスを管理する</summary>
-    /// <param name="speed">弾速</param>
-    /// <param name="damege">与えるダメージ</param>
-    /// <param name="charge">スペシャルゲージ上昇値</param>
-    public void ChargeBulletValue(float speed, float damege, float charge)
+    void Update()
     {
-        _rb.velocity = Vector2.up * speed;
-        _damage = damege;
-        _charge = charge;
+        Vector2 bulletScale = transform.localScale;
+
+        //左クリックを押している(チャージしている)間の処理
+        if (Input.GetButtonDown("Fire1"))
+        {
+            _chargeTimer += Time.deltaTime;
+            _rb.velocity = Vector2.zero;
+
+            if (_chargeTimer <= _chargeTime)
+            {
+                bulletScale.x += _scaleMagnification;
+                bulletScale.y += _scaleMagnification;
+            }
+        }
+
+        //左クリックを離したときの処理
+        if (Input.GetButtonUp("Fire1"))
+        {
+            transform.localScale = bulletScale;
+
+            //チャージ時間が最大チャージ時間の３分の１未満
+            if (_chargeTimer < _chargeTime / 3)
+            {
+                Destroy(gameObject);
+            }
+
+            //チャージ時間が最大チャージ時間の３分の１以上
+            else if (_chargeTimer >= _chargeTime / 3)
+            {
+                _speed *= 1 / 3;
+                _damage *= 2 / 3;
+                _charge *= 2 / 3;
+            }
+
+            //チャージ時間が最大チャージ時間の３分の２以上
+            else if (_chargeTimer >= _chargeTime * 2 / 3)
+            {
+                _speed *= 2 / 3;
+                _damage *= 3 / 3;
+                _charge *= 3 / 3;
+            }
+
+            //最大までチャージした時
+            else if (_chargeTimer == _chargeTime)
+            {
+                _speed *= 3 / 3;
+                _damage *= 3 / 2;
+                _charge *= 3 / 2;
+            }
+
+            _rb.velocity = Vector2.up * _speed;
+            _chargeTimer = 0f;
+        }
     }
 
     protected override void Attack()
