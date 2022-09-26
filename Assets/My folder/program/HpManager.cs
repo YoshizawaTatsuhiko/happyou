@@ -6,15 +6,20 @@ using DG.Tweening;
 
 public class HpManager : MonoBehaviour
 {
+    /// <summary>ゲージの減少速度</summary>
     [SerializeField] float _changeInterval = 1f;
+    /// <summary>HPゲージ</summary>
     [SerializeField] Slider _slider = default;
     /// <summary>最大HP</summary>
     [SerializeField] private float _maxHP;
+    /// <summary>現在のHP</summary>
+    private float _currentHP;
+    /// <summary>死んだらイメージを表示</summary>
     [SerializeField] Image _image;
     /// <summary>GodMode</summary>
     [SerializeField] bool _super = false;
-    /// <summary>現在のHP</summary>
-    private float _currentHP;
+    /// <summary>HPが一定以下になったら出現させる</summary>
+    [SerializeField] GameObject _hands = default;
 
     void Start()
     {
@@ -22,12 +27,20 @@ public class HpManager : MonoBehaviour
 
         if(_super == true && gameObject.tag == "Player")
         {
-            _currentHP += Mathf.Infinity;
+            _currentHP = Mathf.Infinity;
         }
     }
 
     void Update()
     {
+        if(gameObject.tag == "BOSS")
+        {
+            if(_currentHP <= _maxHP / 2)
+            {
+                _hands.SetActive(true);
+            }
+        }
+
         if(_currentHP <= 0)
         {
             ImageLord();
