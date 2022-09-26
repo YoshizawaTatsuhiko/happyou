@@ -20,6 +20,7 @@ public class HpManager : MonoBehaviour
     [SerializeField] bool _super = false;
     /// <summary>HP‚ªˆê’èˆÈ‰º‚É‚È‚Á‚½‚çoŒ»‚³‚¹‚é</summary>
     [SerializeField] GameObject _hands = default;
+    [SerializeField] GameObject _onDestroy = default;
 
     void Start()
     {
@@ -35,7 +36,7 @@ public class HpManager : MonoBehaviour
     {
         if(gameObject.tag == "BOSS")
         {
-            if(_currentHP <= _maxHP / 2)
+            if(_currentHP <= _maxHP * 3 / 5)
             {
                 _hands.SetActive(true);
             }
@@ -54,6 +55,7 @@ public class HpManager : MonoBehaviour
         {
             _image.gameObject.SetActive(true);
             Cursor.visible = true;
+            Instantiate(_onDestroy, transform.position, transform.rotation);
         }
 
         //BOSS‚ª€‚ñ‚¾‚çGameClear
