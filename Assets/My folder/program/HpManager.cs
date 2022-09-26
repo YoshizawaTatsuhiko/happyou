@@ -16,7 +16,7 @@ public class HpManager : MonoBehaviour
     private float _currentHP;
     /// <summary>死んだらイメージを表示</summary>
     [SerializeField] Image _image;
-    /// <summary>GodMode</summary>
+    /// <summary>デバッグ用無敵モード</summary>
     [SerializeField] bool _super = false;
     /// <summary>HPが一定以下になったら出現させる</summary>
     [SerializeField] GameObject _hands = default;
