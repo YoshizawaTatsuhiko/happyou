@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class ChangeWeapon : MonoBehaviour
 {
-    [SerializeField] GameObject _main;
-    [SerializeField] GameObject _saw;
+    [SerializeField] GameObject _bullet = default;
+    [SerializeField] GameObject _saw = default;
+    [SerializeField] GameObject _specialShot = default;
+    [SerializeField] GameObject _barrier = default;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -14,13 +16,26 @@ public class ChangeWeapon : MonoBehaviour
             switch (item.WeaponType)
             {
                 case WeaponType.bullet:
-                    _main.SetActive(true);
+                    _bullet.SetActive(true);
                     _saw.SetActive(false);
                     break;
 
                 case WeaponType.saw:
-                    _main.SetActive(false);
+                    _bullet.SetActive(false);
                     _saw.SetActive(true);
+                    break;
+            }
+
+            switch (item.WeaponType)
+            {
+                case WeaponType.bullet:
+                    _specialShot.SetActive(true);
+                    _barrier.SetActive(false);
+                    break;
+
+                case WeaponType.saw:
+                    _specialShot.SetActive(false);
+                    _barrier.SetActive(true);
                     break;
             }
         }
@@ -34,4 +49,8 @@ public class ChangeWeapon : MonoBehaviour
     bullet,
     /// <summary>近距離のこぎり</summary>
     saw,
+    /// <summary>デフォルトスキル</summary>
+    specialShot,
+    /// <summary>一定時間無敵</summary>
+    barrier,
 }
