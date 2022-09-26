@@ -5,17 +5,17 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
-    Animator _anim1;
+    Animator _anim;
 
     void Start()
     {
-        _anim1 = GetComponent<Animator>();
+        _anim = GetComponent<Animator>();
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "weapon1")
         {
-            _anim1.Play("Hit Effect");
+            _anim.Play("Hit Effect");
             Debug.Log("B_hit");
         }
 
