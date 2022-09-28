@@ -8,15 +8,12 @@ using DG.Tweening;
 public class SceneLoad : MonoBehaviour
 {
     /// <summary>Fade‚³‚¹‚é‘ÎÛ</summary>
-    [SerializeField] Image _image;
+    [SerializeField] Image _image = default;
     /// <summary>Fade‚·‚é‚Ü‚Å‚ÌŠÔ</summary>
     [SerializeField] float _fadeTime = 1f;
 
     void OnEnable()
     {
-        //var imageAlpha = _image.color;
-        //imageAlpha.a = 255f;
-        //_image.color = imageAlpha;
         Debug.Log("complete");
         _image.gameObject.SetActive(true);
         _image.DOFade(0f, _fadeTime).OnComplete(() => _image.gameObject.SetActive(false));

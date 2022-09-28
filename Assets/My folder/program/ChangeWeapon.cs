@@ -15,27 +15,14 @@ public class ChangeWeapon : MonoBehaviour
         {
             switch (item.WeaponType)
             {
-                case WeaponType.bullet:
+                case WeaponType.Bullet:
                     _bullet.SetActive(true);
                     _saw.SetActive(false);
                     break;
 
-                case WeaponType.saw:
+                case WeaponType.RotatingSaw:
                     _bullet.SetActive(false);
                     _saw.SetActive(true);
-                    break;
-            }
-
-            switch (item.WeaponType)
-            {
-                case WeaponType.bullet:
-                    _specialShot.SetActive(true);
-                    _barrier.SetActive(false);
-                    break;
-
-                case WeaponType.saw:
-                    _specialShot.SetActive(false);
-                    _barrier.SetActive(true);
                     break;
             }
         }
@@ -46,11 +33,11 @@ public class ChangeWeapon : MonoBehaviour
  public enum WeaponType
 {
     /// <summary>デフォルト武器</summary>
-    bullet,
+    Bullet,
     /// <summary>近距離のこぎり</summary>
-    saw,
-    /// <summary>デフォルトスキル</summary>
-    specialShot,
-    /// <summary>一定時間無敵</summary>
-    barrier,
+    RotatingSaw,
+//    /// <summary>デフォルトスキル</summary>
+//    SpecialShot,
+//    /// <summary>一定時間無敵</summary>
+//    Barrier,
 }

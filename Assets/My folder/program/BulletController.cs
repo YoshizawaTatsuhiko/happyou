@@ -26,7 +26,7 @@ public class BulletController : Weapon
         _rb.velocity = Vector2.up * _speed;    //’e‚ÌƒxƒNƒgƒ‹
         Destroy(gameObject, _lifeTime);    //ŠÔ‚ª—ˆ‚½‚çÁ¸
         _spGauge = FindObjectOfType<SpecialController>();
-        _bossHP = GameObject.FindGameObjectWithTag("BOSS").GetComponent<HpManager>();
+        _bossHP = GameObject.FindGameObjectWithTag("BOSS")?.GetComponent<HpManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
