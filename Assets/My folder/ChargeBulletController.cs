@@ -34,7 +34,7 @@ public class ChargeBulletController : Weapon
         Vector2 bulletScale = transform.localScale;
 
         //左クリックを押している(チャージしている)間の処理
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButton("Fire1"))
         {
             _chargeTimer += Time.deltaTime;
             _rb.velocity = Vector2.zero;
@@ -44,11 +44,15 @@ public class ChargeBulletController : Weapon
                 bulletScale.x += _scaleMagnification;
                 bulletScale.y += _scaleMagnification;
             }
+
+            transform.localScale = bulletScale;
         }
 
         //左クリックを離したときの処理
         if (Input.GetButtonUp("Fire1"))
         {
+            Debug.Log(_chargeTime);
+            Debug.Log(_chargeTimer);
             transform.localScale = bulletScale;
 
             //チャージ時間が最大チャージ時間の３分の１未満

@@ -5,11 +5,11 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     /// <summary>‹@‘Ì‚ÌˆÚ“®‘¬“x</summary>
-    [SerializeField] float _macineSpeed;
+    [SerializeField] float _machineSpeed;
     Rigidbody2D _rb;
     void Start()
     {
-        //Cursor.visible = false;
+        Cursor.visible = false;
         _rb = GetComponent<Rigidbody2D>();
     }
 
@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector3 vec = mousePosition - transform.position;
         _rb.velocity = Vector2.zero;
-        _rb.AddForce(vec.normalized * _macineSpeed, ForceMode2D.Impulse);
+        _rb.AddForce(vec.normalized * _machineSpeed, ForceMode2D.Force);
     }
 
     void OnTriggerEnter2D(Collider2D collision)
