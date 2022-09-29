@@ -2554,7 +2554,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1458420390
 Transform:
   m_ObjectHideFlags: 0
@@ -3456,7 +3456,7 @@ GameObject:
   - component: {fileID: 2017708582}
   - component: {fileID: 2017708581}
   m_Layer: 0
-  m_Name: Square
+  m_Name: go bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3474,11 +3474,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99b8020f38ccb104899f7d76fd70e380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 1
-  _damage: 1
-  _charge: 1
-  _chargeTime: 3
-  _scaleMagnification: 0.1
+  _speed: 20
+  _damage: 10
+  _charge: 2
+  _chargeTime: 5
+  _scaleMagnification: 0.01
 --- !u!50 &2017708582
 Rigidbody2D:
   serializedVersion: 4
@@ -4129,7 +4129,7 @@ PrefabInstance:
     - target: {fileID: 3504526877298223115, guid: 90638238e85879141ada217059c14b32,
         type: 3}
       propertyPath: _super
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3504526877298223115, guid: 90638238e85879141ada217059c14b32,
         type: 3}

@@ -29,9 +29,9 @@ public class BulletController : Weapon
         _bossHP = GameObject.FindGameObjectWithTag("BOSS")?.GetComponent<HpManager>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "BOSS" || collision.gameObject.tag == "damage1")
+        if (collision.gameObject.tag == "damage1" || collision.gameObject.tag == "BOSS")
         {
             CommonOnTrigger(collision);
             Destroy(gameObject);

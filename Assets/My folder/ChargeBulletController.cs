@@ -18,6 +18,7 @@ public class ChargeBulletController : Weapon
     float _chargeTimer = 0f;
     /// <summary>_bulletの拡大倍率</summary>
     [SerializeField] float _scaleMagnification = 1f;
+    Vector2 _goScale = default;
     Rigidbody2D _rb;
     HpManager _bossHp;
     SpecialController _spGauge;
@@ -27,11 +28,12 @@ public class ChargeBulletController : Weapon
         _rb = GetComponent<Rigidbody2D>();
         _bossHp = GameObject.FindGameObjectWithTag("BOSS").GetComponent<HpManager>();
         _spGauge = FindObjectOfType<SpecialController>();
+        _goScale = transform.localScale;
     }
 
     void Update()
     {
-        Vector2 bulletScale = transform.localScale;
+        Vector2 bulletScale = _goScale;
 
         //左クリックを押している(チャージしている)間の処理
         if (Input.GetButton("Fire1"))
@@ -53,7 +55,6 @@ public class ChargeBulletController : Weapon
         {
             Debug.Log(_chargeTime);
             Debug.Log(_chargeTimer);
-            transform.localScale = bulletScale;
 
             //チャージ時間が最大チャージ時間の３分の１未満
             if (_chargeTimer < _chargeTime / 3)
