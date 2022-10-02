@@ -2350,7 +2350,7 @@ GameObject:
   - component: {fileID: 1374354055}
   - component: {fileID: 1374354054}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: ChargeShot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

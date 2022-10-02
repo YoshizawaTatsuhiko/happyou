@@ -18,6 +18,7 @@ public class ChargeBulletController : Weapon
     float _chargeTimer = 0f;
     /// <summary>_bullet‚ÌŠg‘å”{—¦</summary>
     [SerializeField] float _scaleMagnification = 1f;
+    Transform _parent = default;
     Vector2 _goScale = default;
     Rigidbody2D _rb;
     HpManager _bossHp;
@@ -28,6 +29,7 @@ public class ChargeBulletController : Weapon
         _rb = GetComponent<Rigidbody2D>();
         _bossHp = GameObject.FindGameObjectWithTag("BOSS").GetComponent<HpManager>();
         _spGauge = FindObjectOfType<SpecialController>();
+        _parent = GameObject.Find("ChargeShot").transform;
         _goScale = transform.localScale;
     }
 
@@ -40,6 +42,7 @@ public class ChargeBulletController : Weapon
         {
             _chargeTimer += Time.deltaTime;
             _rb.velocity = Vector2.zero;
+            transform.SetParent(_parent);
 
             if (_chargeTimer <= _chargeTime)
             {
