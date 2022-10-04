@@ -12,14 +12,14 @@ public class ChargeBulletController : Weapon
     [SerializeField] float _damage = 1f;
     /// <summary>スペシャルゲージ上昇値</summary>
     [SerializeField] float _charge = 1f;
+    /// <summary>弾が消失するまでの時間</summary>
+    [SerializeField] float _lifeTime = 1f;
     /// <summary>チャージ時間の最大値</summary>
     [SerializeField] float _chargeTime = 3f;
     /// <summary>チャージ時間の計測</summary>
     float _chargeTimer = 0f;
     /// <summary>_bulletの拡大倍率</summary>
     [SerializeField] float _scaleMagnification = 1f;
-    Transform _parent = default;
-    Vector2 _goScale = default;
     Rigidbody2D _rb;
     HpManager _bossHp;
     SpecialController _spGauge;
@@ -29,20 +29,17 @@ public class ChargeBulletController : Weapon
         _rb = GetComponent<Rigidbody2D>();
         _bossHp = GameObject.FindGameObjectWithTag("BOSS").GetComponent<HpManager>();
         _spGauge = FindObjectOfType<SpecialController>();
-        _parent = GameObject.Find("ChargeShot").transform;
-        _goScale = transform.localScale;
     }
 
     void Update()
     {
-        Vector2 bulletScale = _goScale;
+        Vector2 bulletScale = transform.localScale;
 
         //左クリックを押している(チャージしている)間の処理
         if (Input.GetButton("Fire1"))
         {
             _chargeTimer += Time.deltaTime;
             _rb.velocity = Vector2.zero;
-            transform.SetParent(_parent);
 
             if (_chargeTimer <= _chargeTime)
             {
@@ -56,9 +53,6 @@ public class ChargeBulletController : Weapon
         //左クリックを離したときの処理
         if (Input.GetButtonUp("Fire1"))
         {
-            Debug.Log(_chargeTime);
-            Debug.Log(_chargeTimer);
-
             //チャージ時間が最大チャージ時間の３分の１未満
             if (_chargeTimer < _chargeTime / 3)
             {
@@ -91,6 +85,7 @@ public class ChargeBulletController : Weapon
 
             _rb.velocity = Vector2.up * _speed;
             _chargeTimer = 0f;
+            Destroy(gameObject, _lifeTime);
         }
     }
 

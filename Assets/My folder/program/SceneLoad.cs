@@ -21,14 +21,13 @@ public class SceneLoad : MonoBehaviour
 
     public void MoveScene(string sceneName)
     {
-        if(_image != null)
+        if(_image)
         {
-            _image.DOFade(1f, _fadeTime)
-                .OnComplete(() => SceneManager.LoadScene(sceneName));
+            _image.DOFade(1f, _fadeTime).OnComplete(() => SceneManager.LoadScene(sceneName));
         }
         else
         {
-            SceneManager.LoadScene(sceneName);
+            Debug.LogWarning("image is nothing");
         }
     }
 }
