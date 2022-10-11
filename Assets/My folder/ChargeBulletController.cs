@@ -23,6 +23,50 @@ public class ChargeBulletController : Weapon
     Rigidbody2D _rb;
     HpManager _bossHp;
     SpecialController _spGauge;
+    /// <summary>弾がでかくなりつづけるフラグ（true の時でかくなる）</summary>
+    bool _isGrowing = true;
+
+    /// <summary>
+    /// 弾がでかくなるのをやめ、発射する
+    /// </summary>
+    public void Release()
+    {
+        _isGrowing = false;
+
+        //チャージ時間が最大チャージ時間の３分の１未満の時
+        if (_chargeTimer < _chargeTime / 3)
+        {
+            Destroy(gameObject);
+        }
+
+        //チャージ時間が最大チャージ時間の３分の１以上の時
+        else if (_chargeTimer >= _chargeTime / 3)
+        {
+            _speed *= 0.33f;
+            _damage *= 0.66f;
+            _charge *= 0.66f;
+        }
+
+        //チャージ時間が最大チャージ時間の３分の２以上の場合
+        else if (_chargeTimer >= _chargeTime * 2 / 3)
+        {
+            _speed *= 0.66f;
+            //_damage *= 3 / 3;
+            //_charge *= 3 / 3;
+        }
+
+        //最大までチャージした時
+        else if (_chargeTimer == _chargeTime)
+        {
+            //_speed *= 3 / 3;
+            _damage *= 1.5f;
+            _charge *= 1.5f;
+        }
+
+        _rb.velocity = Vector2.up * _speed;
+        _chargeTimer = 0f;
+        Destroy(gameObject, _lifeTime);
+    }
 
     void Start()
     {
@@ -35,9 +79,10 @@ public class ChargeBulletController : Weapon
     {
         Vector2 bulletScale = transform.localScale;
 
-        //左クリックを押している(チャージしている)間の処理
-        if (Input.GetButton("Fire1"))
-        {
+        // でかくなる処理
+        if (_isGrowing)
+        { 
+            //左クリックを押している(チャージしている)間の処理
             _chargeTimer += Time.deltaTime;
             _rb.velocity = Vector2.zero;
 
@@ -48,44 +93,6 @@ public class ChargeBulletController : Weapon
             }
 
             transform.localScale = bulletScale;
-        }
-
-        //左クリックを離したときの処理
-        if (Input.GetButtonUp("Fire1"))
-        {
-            //チャージ時間が最大チャージ時間の３分の１未満
-            if (_chargeTimer < _chargeTime / 3)
-            {
-                Destroy(gameObject);
-            }
-
-            //チャージ時間が最大チャージ時間の３分の１以上
-            else if (_chargeTimer >= _chargeTime / 3)
-            {
-                _speed *= 1 / 3;
-                _damage *= 2 / 3;
-                _charge *= 2 / 3;
-            }
-
-            //チャージ時間が最大チャージ時間の３分の２以上
-            else if (_chargeTimer >= _chargeTime * 2 / 3)
-            {
-                _speed *= 2 / 3;
-                _damage *= 3 / 3;
-                _charge *= 3 / 3;
-            }
-
-            //最大までチャージした時
-            else if (_chargeTimer == _chargeTime)
-            {
-                _speed *= 3 / 3;
-                _damage *= 3 / 2;
-                _charge *= 3 / 2;
-            }
-
-            _rb.velocity = Vector2.up * _speed;
-            _chargeTimer = 0f;
-            Destroy(gameObject, _lifeTime);
         }
     }
 

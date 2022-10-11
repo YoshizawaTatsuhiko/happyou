@@ -124,4 +124,4 @@ MonoBehaviour:
   _charge: 2
   _lifeTime: 1
   _chargeTime: 3
-  _scaleMagnification: 0.0001
+  _scaleMagnification: 0.01

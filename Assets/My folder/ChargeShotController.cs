@@ -5,25 +5,29 @@ using System;
 
 public class ChargeShotController : MonoBehaviour
 {
-    /// <summary>チャージショットの弾</summary>
-    [SerializeField] GameObject _bullet = default;
+    /// <summary>チャージショットのプレハブ</summary>
+    [SerializeField] GameObject _bulletPrefab = default;
     /// <summary>bullet を発射する muzzle</summary>
     [SerializeField] Transform _muzzle = default;
-    /// <summary>弾の生成を司るList</summary>
-    List<GameObject> _goList = new List<GameObject>();
+    /// <summary>チャージショットのインスタンス</summary>
+    GameObject _bullet;
 
     void Update()
     {
         //左クリックを押している(チャージしている)間の処理
-        if(Input.GetButtonDown("Fire1"))
+        if( Input.GetButtonDown("Fire1"))
         {
-            if(_bullet != null)
+            if(_bullet == null)
             {
-                Instantiate(_bullet, _muzzle.transform.position, transform.rotation);
+                _bullet = Instantiate(_bulletPrefab, _muzzle.transform.position, transform.rotation);
             }
-            else
+        }
+
+        if (Input.GetButtonUp("Fire1"))
+        {
+            if (_bullet != null)
             {
-                _goList.Add(_bullet);
+                _bullet.GetComponent<ChargeBulletController>().Release();
             }
         }
     }
