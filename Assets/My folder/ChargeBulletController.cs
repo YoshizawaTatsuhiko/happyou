@@ -42,23 +42,20 @@ public class ChargeBulletController : Weapon
         //チャージ時間が最大チャージ時間の３分の１以上の時
         else if (_chargeTimer >= _chargeTime / 3)
         {
-            _speed *= 0.33f;
-            _damage *= 0.66f;
-            _charge *= 0.66f;
+            _speed *= 1f / 3;
+            _damage *= 2f / 3;
+            _charge *= 2f / 3;
         }
 
-        //チャージ時間が最大チャージ時間の３分の２以上の場合
+        //チャージ時間が最大チャージ時間の３分の２以上の時
         else if (_chargeTimer >= _chargeTime * 2 / 3)
         {
-            _speed *= 0.66f;
-            //_damage *= 3 / 3;
-            //_charge *= 3 / 3;
+            _speed *= 2f / 3;
         }
 
         //最大までチャージした時
         else if (_chargeTimer == _chargeTime)
         {
-            //_speed *= 3 / 3;
             _damage *= 1.5f;
             _charge *= 1.5f;
         }
