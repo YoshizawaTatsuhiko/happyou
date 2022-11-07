@@ -26,7 +26,7 @@ public class HpManager : MonoBehaviour
     {
         _currentHP = _maxHP;
 
-        if(_super)
+        if(_super )
         {
             _currentHP = Mathf.Infinity;
         }

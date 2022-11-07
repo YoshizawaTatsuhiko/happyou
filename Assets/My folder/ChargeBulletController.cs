@@ -26,9 +26,7 @@ public class ChargeBulletController : Weapon
     /// <summary>弾がでかくなりつづけるフラグ（true の時でかくなる）</summary>
     bool _isGrowing = true;
 
-    /// <summary>
-    /// 弾がでかくなるのをやめ、発射する
-    /// </summary>
+    /// <summary>弾がでかくなるのをやめ、発射する</summary>
     public void Release()
     {
         _isGrowing = false;
