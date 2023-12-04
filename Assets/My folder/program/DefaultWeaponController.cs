@@ -15,7 +15,7 @@ public class DefaultWeaponController : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if (Input.GetButton("Fire1"))
+        if (!FinishFragController.Instance.IsFinished && Input.GetButton("Fire1"))
         {
             MainAttack();
         }

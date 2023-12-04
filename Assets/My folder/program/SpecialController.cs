@@ -26,7 +26,7 @@ public class SpecialController : MonoBehaviour
     void Update()
     {
         //右クリックでスペシャルアタック
-        if (Input.GetButton("Fire2"))
+        if (!FinishFragController.Instance.IsFinished && Input.GetButton("Fire2"))
         {
             if (_currentGauge == _maxGauge)
             {

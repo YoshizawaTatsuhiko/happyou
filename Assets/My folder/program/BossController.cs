@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BossController : MonoBehaviour
@@ -16,12 +13,6 @@ public class BossController : MonoBehaviour
         if (collision.gameObject.tag == "weapon1")
         {
             _anim.Play("Hit Effect");
-            Debug.Log("B_hit");
-        }
-
-        if (collision.gameObject.tag == "weapon2")
-        {
-            Debug.Log("S_hit");
         }
     }
 }

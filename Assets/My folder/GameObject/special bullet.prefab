@@ -139,7 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 7
   _lifeTime: 2
-  _damage: 100
+  _damage: 30
   _charge: 0
 --- !u!96 &5584465281137549143
 TrailRenderer:

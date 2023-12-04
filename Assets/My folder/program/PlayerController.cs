@@ -20,6 +20,12 @@ public class PlayerController : MonoBehaviour
       
     private void PlayerControl()
     {
+        if (FinishFragController.Instance.IsFinished)
+        {
+            _rb.simulated = false;
+            return;
+        }
+
         //空間でのマウス位置の計算
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector3 vec = mousePosition - transform.position;
@@ -33,7 +39,6 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "damage1")
         {
             GetComponent<HpManager>().ReduceHP(1f);
-            Debug.Log("P_hit");
         }
     }
 }

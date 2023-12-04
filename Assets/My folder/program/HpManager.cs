@@ -26,7 +26,7 @@ public class HpManager : MonoBehaviour
     {
         _currentHP = _maxHP;
 
-        if(_super )
+        if (_super)
         {
             _currentHP = Mathf.Infinity;
         }
@@ -34,15 +34,15 @@ public class HpManager : MonoBehaviour
 
     void Update()
     {
-        if(gameObject.tag == "BOSS")
+        if (gameObject.tag == "BOSS")
         {
-            if(_currentHP <= _maxHP * 3 / 5)
+            if (_currentHP <= _maxHP * 3 / 5)
             {
                 _hands.SetActive(true);
             }
         }
 
-        if(_currentHP <= 0)
+        if (_currentHP <= 0)
         {
             ImageLord();
         }
@@ -50,20 +50,17 @@ public class HpManager : MonoBehaviour
 
     private void ImageLord()
     {
-        //player‚ªŽ€‚ñ‚¾‚çGameOver
-        if(gameObject.tag == "Player")
+        if (gameObject.tag == "Player") //player‚ªŽ€‚ñ‚¾‚çGameOver
         {
             _image.gameObject.SetActive(true);
-            Cursor.visible = true;
             Instantiate(_onDestroy, transform.position, transform.rotation);
-        }
-
-        //BOSS‚ªŽ€‚ñ‚¾‚çGameClear
-        else if(gameObject.tag == "BOSS")
+        }        
+        else if (gameObject.tag == "BOSS") //BOSS‚ªŽ€‚ñ‚¾‚çGameClear
         {
-            _image.gameObject.SetActive(true); 
-            Cursor.visible = true;
+            _image.gameObject.SetActive(true);
         }
+        FinishFragController.Instance.IsFinished = true;
+        Cursor.visible = true;
         Destroy(gameObject);
     }
 

@@ -14,7 +14,6 @@ public class SceneLoad : MonoBehaviour
 
     void OnEnable()
     {
-        Debug.Log("complete");
         _image.gameObject.SetActive(true);
         _image.DOFade(0f, _fadeTime).OnComplete(() => _image.gameObject.SetActive(false));
     }
